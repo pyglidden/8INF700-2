@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 376806caad1d35e43817682516e1046a, type: 3}
-  m_Name: OurPostProcess
+  m_Script: {fileID: 11500000, guid: 8a3bdb2cd68f901469e7cc149151eb49, type: 3}
+  m_Name: OurPotato
   m_EditorClassIdentifier: 
   debugViews:
     m_Enabled: 1
@@ -26,7 +26,7 @@ MonoBehaviour:
         motionVectorsResolution: 24
         motionVectorsAmplitude: 64
   fog:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       excludeSkybox: 1
   antialiasing:
@@ -34,7 +34,7 @@ MonoBehaviour:
     m_Settings:
       method: 0
       fxaaSettings:
-        preset: 0
+        preset: 2
       taaSettings:
         jitterSpread: 0.75
         sharpen: 0.3
@@ -43,8 +43,8 @@ MonoBehaviour:
   ambientOcclusion:
     m_Enabled: 0
     m_Settings:
-      intensity: 0.6
-      radius: 1
+      intensity: 1
+      radius: 0.3
       sampleCount: 10
       downsampling: 1
       forceForwardCompatibility: 0
@@ -73,21 +73,21 @@ MonoBehaviour:
     m_Enabled: 0
     m_Settings:
       focusDistance: 10
-      aperture: 5
+      aperture: 5.6
       focalLength: 50
       useCameraFov: 0
       kernelSize: 1
   motionBlur:
     m_Enabled: 0
     m_Settings:
-      shutterAngle: 360
-      sampleCount: 20
-      frameBlending: 1
+      shutterAngle: 270
+      sampleCount: 10
+      frameBlending: 0
   eyeAdaptation:
     m_Enabled: 0
     m_Settings:
-      lowPercent: 1
-      highPercent: 99
+      lowPercent: 45
+      highPercent: 95
       minLuminance: -5
       maxLuminance: 1
       keyValue: 0.25
@@ -95,8 +95,8 @@ MonoBehaviour:
       adaptationType: 0
       speedUp: 2
       speedDown: 1
-      logMin: -9
-      logMax: 5
+      logMin: -8
+      logMax: 4
   bloom:
     m_Enabled: 0
     m_Settings:
@@ -135,9 +135,9 @@ MonoBehaviour:
       colorWheels:
         mode: 1
         log:
-          slope: {r: 1, g: 1, b: 1, a: 0}
-          power: {r: 1, g: 1, b: 1, a: 0}
-          offset: {r: 1, g: 1, b: 1, a: 0}
+          slope: {r: 0, g: 0, b: 0, a: 0}
+          power: {r: 0, g: 0, b: 0, a: 0}
+          offset: {r: 0, g: 0, b: 0, a: 0}
         linear:
           lift: {r: 0, g: 0, b: 0, a: 0}
           gamma: {r: 0, g: 0, b: 0, a: 0}
@@ -314,18 +314,18 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       colored: 1
-      intensity: 0.28
-      size: 1.37
-      luminanceContribution: 0.61
+      intensity: 0.38
+      size: 0.69
+      luminanceContribution: 0.97
   vignette:
     m_Enabled: 1
     m_Settings:
       mode: 0
-      color: {r: 0.009433985, g: 0.008944485, b: 0.57254905, a: 1}
+      color: {r: 0.09500711, g: 0.23812099, b: 0.5754717, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.31
+      intensity: 0.33
       smoothness: 1
-      roundness: 0.99
+      roundness: 1
       mask: {fileID: 0}
       opacity: 1
       rounded: 0
