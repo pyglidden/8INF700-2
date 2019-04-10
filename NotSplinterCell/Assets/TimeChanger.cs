@@ -8,7 +8,7 @@ public class TimeChanger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Coucou");
+        Debug.Log("TimeScale Modified by Patate");
         Time.timeScale = time;
         MovingObject.globalSpeed = objectS;
         CharacterController.globalSpeed = hero;
