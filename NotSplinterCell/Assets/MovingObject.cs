@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovingObject : MonoBehaviour
 {
-    public GameObject movingObject;
+    public Rigidbody movingObject;
     public Vector3 direction;
     public float speed;
     public enum axis { x, z };
@@ -18,17 +18,17 @@ public class MovingObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        movingObject = gameObject;
+        movingObject = gameObject.GetComponent<Rigidbody>();
 
 
         if (myAxe == axis.x)
         {
-            initialCoordonates = gameObject.transform.position.x;
+       
             cumul = initialCoordonates;
         }
         else if (myAxe == axis.z)
         {
-            initialCoordonates = gameObject.transform.position.z;
+ 
             cumul = initialCoordonates;
         }
     }
@@ -39,26 +39,26 @@ public class MovingObject : MonoBehaviour
         if(myAxe == axis.x)
         {
             if(isPositive){
-                movingObject.transform.Translate(new Vector3((manoeuvreMarge / 10f) * speed, 0, 0));
-                cumul += manoeuvreMarge;
+                movingObject.MovePosition(transform.position+new Vector3((manoeuvreMarge / 10f) * speed, 0, 0));
+                cumul += (manoeuvreMarge / 10f) * speed;
             }
             else
             {
-                movingObject.transform.Translate(new Vector3((-manoeuvreMarge/ 10f) * speed, 0, 0));
-                cumul -= manoeuvreMarge;
+                movingObject.MovePosition(transform.position+new Vector3((-manoeuvreMarge/ 10f) * speed, 0, 0));
+                cumul -= (manoeuvreMarge / 10f) * speed;
             }
 
         }else if(myAxe == axis.z)
         {
             if (isPositive)
             {
-                movingObject.transform.Translate(new Vector3(0, 0,( manoeuvreMarge / 10f) * speed));
-                cumul += manoeuvreMarge;
+                movingObject.MovePosition(transform.position+new Vector3(0, 0,( manoeuvreMarge / 10f) * speed));
+                cumul += (manoeuvreMarge / 10f) * speed;
             }
             else
             {
-                movingObject.transform.Translate(new Vector3(0, 0, (-manoeuvreMarge / 10f)*speed));
-                cumul -= manoeuvreMarge;
+                movingObject.MovePosition(transform.position+new Vector3(0, 0, (-manoeuvreMarge / 10f)*speed));
+                cumul -= (manoeuvreMarge / 10f) * speed;
             }
         }
 
