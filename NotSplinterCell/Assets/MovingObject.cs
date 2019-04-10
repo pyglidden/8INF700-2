@@ -62,10 +62,10 @@ public class MovingObject : MonoBehaviour
             }
         }
 
-        if(cumul == manoeuvreMarge)
+        if(cumul >= initialCoordonates +manoeuvreMarge)
         {
             isPositive = false;
-        }else if(cumul == -manoeuvreMarge)
+        }else if(cumul <= initialCoordonates-manoeuvreMarge)
         {
             isPositive = true;
         }
