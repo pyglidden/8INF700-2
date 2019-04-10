@@ -39,12 +39,12 @@ public class MovingObject : MonoBehaviour
         if(myAxe == axis.x)
         {
             if(isPositive){
-                movingObject.transform.Translate(new Vector3(manoeuvreMarge / 10f, 0, 0));
+                movingObject.transform.Translate(new Vector3((manoeuvreMarge / 10f) * speed, 0, 0));
                 cumul += manoeuvreMarge;
             }
             else
             {
-                movingObject.transform.Translate(new Vector3(-manoeuvreMarge / 10f, 0, 0));
+                movingObject.transform.Translate(new Vector3((-manoeuvreMarge/ 10f) * speed, 0, 0));
                 cumul -= manoeuvreMarge;
             }
 
@@ -52,12 +52,12 @@ public class MovingObject : MonoBehaviour
         {
             if (isPositive)
             {
-                movingObject.transform.Translate(new Vector3(0, 0, manoeuvreMarge / 10f));
+                movingObject.transform.Translate(new Vector3(0, 0,( manoeuvreMarge / 10f) * speed));
                 cumul += manoeuvreMarge;
             }
             else
             {
-                movingObject.transform.Translate(new Vector3(0, 0, -manoeuvreMarge / 10f));
+                movingObject.transform.Translate(new Vector3(0, 0, (-manoeuvreMarge / 10f)*speed));
                 cumul -= manoeuvreMarge;
             }
         }
